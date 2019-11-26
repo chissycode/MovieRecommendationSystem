@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title> Movie Recommendation </title>
+</head>
+<body>
+    <form onSubmit="return submitReq();">
+        {% csrf_token %}
+        <label>
+            Name:
+        </label>
+        <input name="alias" type="text" />
+        <label>
+            Des:
+        </label>
+        <input name="des" type="text" />
+        <input type="submit" value="Submit" />
+    </form>
+    <div id="data-container" style="display: none;"></div>
+</body>
+    {% load static %}
+    <script src="{% static "js/main.js" %}"></script>
+</html>

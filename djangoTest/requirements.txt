@@ -1,0 +1,9 @@
+django==2.*
+numpy
+scipy
+pandas
+seaborn
+scikit-learn
+scikit-surprise
+nltk
+twitter==1.18.*

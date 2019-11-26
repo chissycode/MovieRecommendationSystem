@@ -1,0 +1,58 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Tweets-based Movie Recommendation</title>
+    
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!--Google Fonts-->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+</head>
+
+<body>
+    <div class="window-container"> 
+    
+    <div class="search">     
+   
+    <div class="s-bar">
+     <form onsubmit="return submitReq();">
+        {% csrf_token %}
+        <!-- input for adding movie labels: addMovieLabel();-->
+        <label>
+            add movie
+        </label>
+        <br />
+        <input type="text" value="Movie for recommendation" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Movie for recommendation';}" name="MovieLabelInput" />
+        <input type="submit" value="add" onclick="addMovieLabel(); return false;" style ="background: #5bc0de;"/>
+        <br /> <br />
+        <!-- input for providing user's twitter ID -->
+        <label>
+            twitter ID
+        </label>
+        <br />
+        <!-- <input type="text" value="Twitter ID for recommendation" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Twitter ID for recommendation';}" name="twitterId" /> -->
+        <input type="text" value="Twitter ID for recommendation" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Twitter ID for recommendation';}" name="twitterId" />
+        <input type="submit" value="SEARCH" />
+    </form>
+    </div>
+    </div>
+    <div id="movie-label-list" >
+    </div>
+    <!-- recommendation result -->
+    <div class="box"><div id="recommendation-list" style="display: none;"></div></div>
+    {% load static %}
+    <img src="{% static "images/1.jpg" %}" style="display: none;" />
+</body>
+{% load static %}
+<script src="{% static "js/script.js" %}"></script>
+<link href="{% static "css/style.css" %}" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+
+<!-- Custom Theme files -->
+</html>

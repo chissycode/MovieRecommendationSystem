@@ -1,0 +1,44 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <title>Index</title>
+
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+</head>
+
+<body>
+    <div class="window-container" style="padding: 2em;font-size: large;">
+    <div id="movie-label-list">
+    </div>
+    <form onsubmit="return false;">
+        {% csrf_token %}
+        <!-- input for adding movie labels -->
+        <label>
+            add movie
+        </label>
+        <br />
+        <input type="text" name="MovieLabelInput" />
+        <button onclick="return addMovieLabel();">+</button>
+        <br />
+        <!-- input for providing user's twitter ID -->
+        <label>
+            twitter ID
+        </label>
+        <br />
+        <input type="text" name="twitterId" />
+        <br /> <br />
+        <button onclick="return submitReq();"> Get Recommendation </button>
+    </form>
+    <!-- recommendation result -->
+    <div id="recommendation-list" style="display: none;"></div>
+    </div>
+</body>
+{% load static %}
+<script src="{% static "js/script.js" %}"></script>
+</html>
